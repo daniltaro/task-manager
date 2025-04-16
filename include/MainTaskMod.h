@@ -7,8 +7,8 @@
 
 class MainTaskMod {
 public:
-    void run();
+    static void run();
 };
 
 
-#endif //MAINTASKMOD_H
+#endif

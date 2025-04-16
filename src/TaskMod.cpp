@@ -1,6 +1,5 @@
 #include "../include/TaskMod.h"
 
-
 bool Task::operator<(const Task &t) const {
     return prior > t.prior;
 }
@@ -24,13 +23,13 @@ void TaskMod::sortTasks() {
     std::sort(tasks.begin(), tasks.end());
 }
 
-void TaskMod::displayTasks() {
+void TaskMod::displayTasks() const {
     for (const Task &task: tasks) {
         std::cout << task.id << ") (priority: " << task.prior << ") " << task.disc << std::endl;
     }
 }
 
-int TaskMod::setId() {
+int TaskMod::setId() const {
     return tasks.size() + 1;
 }
 
@@ -42,6 +41,6 @@ Task TaskMod::getById(const int &id) {
     }
 }
 
-int TaskMod::size() {
+int TaskMod::size() const {
     return tasks.size();
 }

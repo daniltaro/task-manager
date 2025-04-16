@@ -34,11 +34,11 @@ public:
 
     void sortTasks();
 
-    void displayTasks();
+    void displayTasks() const;
 
-    int setId();
+    int setId() const;
 
-    int size();
+    int size() const;
 
     Task getById(const int &id);
 
@@ -48,4 +48,4 @@ public:
 };
 
 
-#endif //TASKMOD_H
+#endif

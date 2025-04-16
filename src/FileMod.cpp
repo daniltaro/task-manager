@@ -53,7 +53,7 @@ TaskMod FileMod::recordToVec(TaskMod &tasks, const std::string &file_name) {
         Task task;
         std::string content;
         std::getline(file, content);
-        if (content == "") {
+        if (content.empty()) {
             break;
         }
         auto desc_start = content.find_first_of('.');
@@ -61,24 +61,25 @@ TaskMod FileMod::recordToVec(TaskMod &tasks, const std::string &file_name) {
 
         if (desc_start == std::string::npos || prior_start == std::string::npos) {
             std::cerr << "You can't use program with non tasks file" << std::endl;
-            return TaskMod();
+            return {};
         }
 
         std::string disc = content.substr(desc_start, prior_start - desc_start - 1);
 
         if (prior_start == std::string::npos) {
             std::cerr << "Error: priority format incorrect in line: " << content << std::endl;
-            return TaskMod();
+            return {};
         }
         std::string prio = content.substr(prior_start + 14);
 
-        prio.erase(std::remove_if(prio.begin(), prio.end(), [](char c) { return !isdigit(c); }), prio.end());
+        prio.erase(std::remove_if(prio.begin(), prio.end(),
+            [](char c) { return !isdigit(c); }), prio.end());
 
         if (!prio.empty()) {
             task.prior = std::stoi(prio);
         } else {
             std::cerr << "Error: invalid priority value in line: " << content << std::endl;
-            return TaskMod();
+            return {};
         }
 
 

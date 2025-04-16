@@ -4,8 +4,6 @@
 #include <fstream>
 #include <string>
 #include "TaskMod.h"
-#include <cctype>
-
 
 class FileMod {
 private:
@@ -23,5 +21,4 @@ public:
     TaskMod recordToVec(TaskMod &tasks, const std::string &file_name);
 };
 
-
-#endif //FILEMOD_H
+#endif

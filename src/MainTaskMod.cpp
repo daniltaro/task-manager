@@ -63,7 +63,8 @@ void MainTaskMod::run() {
             for (const Task &task: tasks) {
                 file.writeToFile(
                     filename,
-                    std::to_string(task.id) + ". " + task.disc + ". priorety - (" + std::to_string(task.prior) + ")\n");
+                    std::to_string(task.id) + ". " + task.disc +
+                    ". priorety - (" + std::to_string(task.prior) + ")\n");
             }
         } else if (choice == "read") {
             if (file.isClear(filename) == true) {
@@ -78,7 +79,8 @@ void MainTaskMod::run() {
             for (const Task &task: tasks) {
                 file.writeToFile(
                     filename,
-                    std::to_string(task.id) + ". " + task.disc + ". priorety - (" + std::to_string(task.prior) + ")\n");
+                    std::to_string(task.id) + ". " + task.disc +
+                    ". priorety - (" + std::to_string(task.prior) + ")\n");
             }
         } else if (choice == "delete" && tasks.size() > 0) {
             std::cout << "Write task number: ";
@@ -91,7 +93,8 @@ void MainTaskMod::run() {
             for (const Task &task: tasks) {
                 file.writeToFile(
                     filename,
-                    std::to_string(task.id) + ". " + task.disc + ". priorety - (" + std::to_string(task.prior) + ")\n");
+                    std::to_string(task.id) + ". " + task.disc +
+                    ". priorety - (" + std::to_string(task.prior) + ")\n");
             }
         } else if (choice == "unsort" && tasks.size() > 0) {
             file.clearFile(filename);
@@ -99,7 +102,8 @@ void MainTaskMod::run() {
                 Task task = tasks.getById(i);
                 file.writeToFile(
                     filename,
-                    std::to_string(task.id) + ". " + task.disc + ". priorety - (" + std::to_string(task.prior) + ")\n");
+                    std::to_string(task.id) + ". " + task.disc +
+                    ". priorety - (" + std::to_string(task.prior) + ")\n");
             }
         }
     }
