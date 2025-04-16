@@ -57,7 +57,7 @@ TaskMod FileMod::recordToVec(TaskMod &tasks, const std::string &file_name) {
             break;
         }
         auto desc_start = content.find_first_of('.');
-        auto prior_start = content.find(". priorety - (");
+        auto prior_start = content.find(". priority - (");
 
         if (desc_start == std::string::npos || prior_start == std::string::npos) {
             std::cerr << "You can't use program with non tasks file" << std::endl;
